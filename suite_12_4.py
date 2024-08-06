@@ -52,6 +52,12 @@ class Tournament:
 import unittest
 import logging
 
+# basicConfig на следующие параметры:
+    # Уровень - INFO # Режим - чтение # Название файла - runner_tests.log # Кодировка - UTF-8
+    # Формат вывода - на своё усмотрение, обязательная информация: уровень логирования, сообщение логирования.
+logging.basicConfig(level=logging.INFO, filemode='w', filename="runner_tests.log", encoding='utf-8',
+                        format='%(levelname)s, | %(message)s | %(asctime)s')
+
 class RunnerTest(unittest.TestCase):# класс RunnerTest, наследуемый от TestCase из модуля unittest.
 
     # Оберните основной код конструкцией try-except.
@@ -106,15 +112,8 @@ class RunnerTest(unittest.TestCase):# класс RunnerTest, наследуем�
         self.assertNotEqual(run3.distance, run4.distance,)# дистанции должны быть разными
 
 if __name__ == '__main__':
-    unittest.main
-
-    # basicConfig на следующие параметры:
-    # Уровень - INFO # Режим - чтение # Название файла - runner_tests.log # Кодировка - UTF-8
-    # Формат вывода - на своё усмотрение, обязательная информация: уровень логирования, сообщение логирования.
-    logging.basicConfig(level=logging.INFO, filemode='w', filename="runner_tests.log", encoding='utf-8',
-                        format='%(levelname)s, | %(message)s | %(asctime)s')
-
-
+    unittest.main 
+    
     first = Runner('Вося', -10)
     second = Runner('Илья', 5)
     third = Runner(45, 10)
